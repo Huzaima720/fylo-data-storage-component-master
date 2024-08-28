@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css"> <!-- Add your CSS rules in a separate file -->
+
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="user-control">
+      <div class="logo">
+        <img src="images/logo.svg" alt="Fylo logo">
+      </div>
+      <div class="inputs">
+        <div class="input file ">
+          <img src="images/icon-document.svg" alt="">
+          <input type="file" id="fileInput" style="display: none;">
+        </div>
+        <div class="input folder ">
+          <img src="images/icon-folder.svg" alt="">
+          <input type="file" id="folderInput" style="display: none;" webkitdirectory directory>
+
+        </div>
+        <div class="input cloud ">
+          <img src="images/icon-upload.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="storage">
+      <p>You have used <span class="amount">815 GB</span> of your storage</p>
+      <div class="progress-container">
+        <div class="progress">
+          <div class="bar">
+            <div class="circle"></div>
+          </div>
+        </div>
+        <div class="range">
+          <span class="min">0GB</span>
+          <span class="max">1000GB</span>
+        </div>
+      </div>
+    </div>
+    <div class="storage-left">
+      <span class="amount">185 </span>GB LEFT
+      <div class="right-triangle">
+
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

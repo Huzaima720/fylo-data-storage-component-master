@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    
+/* ## Colors
+
+### Primary
+
+- Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
+
+### Neutral
+
+- Pale Blue: hsl(243, 100%, 93%)
+- Grayish Blue: hsl(229, 7%, 55%)
+- Dark Blue: hsl(228, 56%, 26%)
+- Very Dark Blue: hsl(229, 57%, 11%) */
+
+    --primary-gradient-start: hsl(6, 100%, 80%);
+    --primary-gradient-end: hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+    background-image: url('images/bg-desktop.png');
+    background-size: 100% 50%;
+    
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container{
+    width: 65%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: space-between;
+    gap: 40px;
+    position: relative;
+}
+.user-control , .storage {
+    background-color: var(--dark-blue);
+    padding: 40px;
+    border-radius: 15px;
+
+}
+
+.user-control{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-top-right-radius: 120px;
+
+}
+.inputs{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.input{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-dark-blue);
+    cursor: pointer;
+}
+
+.storage{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+  
+}
+
+.storage p{
+    font-size: 17px;
+    color: var(--pale-blue);
+
+}
+
+
+.storage p span{
+    font-weight: 800;
+}
+.progress-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.progress {
+    width: 100%;
+    height: 22px;
+    border-radius: 20px;
+    background-color: var(--very-dark-blue);
+    padding: 3px;
+
+    
+}
+
+.bar{
+    height: 100%;
+    width: 80%;
+    background: linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end));
+    border-radius: 20px;
+    padding: 2px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.circle{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: var(--pale-blue);
+    
+}
+
+.range{
+    display: flex;
+    justify-content: space-between;
+}
+
+.range span {
+    font-size: 17px;
+    color: var(--pale-blue);
+    font-weight: bold;
+}
+
+.storage-left{
+    position: absolute;
+    top: 0;
+    right: 40px;
+    background-color: white;
+    padding: 15px  30px;
+    border-radius: 15px;
+    border-bottom-right-radius: 0px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--grayish-blue);
+    
+}
+
+.storage-left .amount{
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--very-dark-blue);
+}
+
+.right-triangle {
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    border-left: 25px solid transparent;
+    border-top: 25px solid white;
+    
+}
+
+
+@media  (max-width: 1440px) and ( min-width: 992px){
+    .user-control , .storage {   
+        padding: 30px;     
+    }
+    .storage-left{
+        right: 30px;
+    }
+    
+    .storage p{
+        font-size: 16px;
+    }
+
+    .storage-left .amount {
+        font-size: 30px;
+    }
+    
+}
+
+@media  (max-width: 1200px)  and ( min-width: 992px) {
+    .container {
+        width: 80%;
+    }
+    .logo {
+        width: 120px;
+        height: auto;
+    }
+    .logo img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .input{
+        width: 45px;
+        height: 45px;
+    }
+    .input  img{
+        width: 20px;
+        height: auto;
+        object-fit: cover;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .storage-left{
+        font-size: 14px;
+        padding: 13px  26px;
+    }
+
+    .storage-left .amount {
+        font-size: 28px;
+    }
+}
+
+@media  (max-width: 992px){
+
+    body{
+        background-image: url('images/bg-mobile.png');
+        background-size: 100% 100%;
+    }
+    .container {
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .user-control , .storage {   
+        padding: 50px; 
+        width: 100%;    
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+    .logo img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    .inputs{
+        gap: 25px;
+    }
+    .input{
+        width: 70px;
+        height: 70px;
+    }
+    .input  img{
+        width: 35px;
+        height: auto;
+        object-fit: cover;
+    }
+    .storage{
+        gap: 20px;
+        padding-bottom: 75px;
+    }
+
+    .storage p{
+        font-size: 24px;
+        text-align: center;
+    }
+    .progress-container{
+        gap: 10px;
+    }
+    .progress{
+        height: 30px;
+    }
+    .circle{
+        height: 18px;
+        width: 18px;
+    }
+    .range span{
+        font-size: 20px;
+    }
+    .storage-left{
+        bottom: -50px;
+        top: auto;
+        right: auto;
+        
+        border-radius: 20px;
+
+        font-size: 20px;
+        padding: 22px  38px;
+
+
+    }
+    .storage-left .amount{
+        font-size: 50px;
+    }
+    .right-triangle{
+        display: none;
+    }
+
+    
+}
+
+@media  (max-width: 500px){
+    .container {
+        width: 90%;
+        gap: 15px;  
+    }
+    .user-control , .storage {   
+        padding: 30px;   
+    }
+    .logo {
+        width: 150px;
+    }
+    .input{
+        width: 50px;
+        height: 50px;
+    }
+    .input  img{
+        width: 25px;
+       
+    }
+    .storage{
+        padding-bottom: 50px;
+    }
+
+    .storage p{
+        font-size: 16px;
+    }
+    .progress{
+        height: 22px;
+    }
+    .circle{
+        height: 13px;
+        width: 13px;
+    }
+
+    .range span{
+        font-size: 15px;
+    }
+    .storage-left{
+        bottom: -40px;
+        font-size: 16px;
+        padding: 20px  35px;
+
+
+    }
+    .storage-left .amount{
+        font-size: 30px;
+    }
+    .right-triangle{
+        display: none;
+    }
+
+   
+}
